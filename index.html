@@ -1,207 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tejeshree Dali Venugopal, Graduate Student and Software Developer</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tejeshree Dali Venugopal | SDE @ AWS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#07080f;
+  --bg2:#0e0f1a;
+  --surface:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.08);
+  --text:#eef0f7;
+  --muted:#8b8fa8;
+  --indigo:#818cf8;
+  --cyan:#22d3ee;
+  --grad:linear-gradient(135deg,#818cf8,#22d3ee);
+  --grad2:linear-gradient(135deg,#6366f1,#06b6d4);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <main>
-      <!-- ***********************  HOME  *********************** -->
-      <header>
-        <div class="section-format">
-          <h1><strong>Tejeshree Dali Venugopal</strong></h1>
-          <h2>Grad Student | Software Developer</h2>
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(129,140,248,0.4);border-radius:3px}
 
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(7,8,15,0.8);border-bottom:1px solid var(--border);transition:all .3s}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:.9rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--indigo)}
 
-          <ul>
-            <li><a href="Tejeshree_DaliVenugopal_Resume.pdf" target="_blank"> RESUME </a></li>
-          </ul>
+/* ── Hero ── */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:2rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(99,102,241,0.15) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(6,182,212,0.1) 0%,transparent 60%)}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(129,140,248,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(129,140,248,0.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
+.hero-content{position:relative;text-align:center;max-width:800px}
+.hero-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--cyan);border:1px solid rgba(34,211,238,0.3);padding:.3rem .8rem;border-radius:100px;margin-bottom:1.5rem;background:rgba(34,211,238,0.05)}
+h1.name{font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;margin-bottom:1rem}
+.name-grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.typewriter-wrap{font-size:clamp(1rem,2.5vw,1.4rem);color:var(--muted);margin-bottom:2rem;height:2em;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.typewriter-prefix{color:var(--text)}
+#typewriter{color:var(--indigo);font-weight:600}
+.cursor{display:inline-block;width:2px;height:1.2em;background:var(--indigo);animation:blink 1s step-end infinite;margin-left:2px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{color:var(--muted);max-width:550px;margin:0 auto 2.5rem;font-size:1.05rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.75rem 1.75rem;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--grad2);color:#fff;box-shadow:0 0 30px rgba(99,102,241,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(99,102,241,0.5)}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--indigo);color:var(--indigo)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.75rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+.scroll-hint svg{width:20px;height:20px}
 
-          <!-- <p>Intrigued by the unfolding of software and computer technology, I would like to explore opportunities in software development to help the company examine effective and reasonable alternatives, challenging issues, and furthermore, provide innovative solutions that stay defined in the clients' space-time structure, and thereby to further the objectives of the organisation in the long-run.</p>
-          <p>Experienced Senior Software Engineer with a demonstrated history of working in the automotive industry. Skilled in Java, C, Python.</p> -->
-        </div>
-        </header>
+/* ── Sections ── */
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem}
+h2.section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:3rem}
+h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-      <!-- ***********************  ABOUT/SKILLS  *********************** -->
-      <section class="About">
-        <h2>About</h2>
+/* ── Cards ── */
+.glass{background:var(--surface);border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(10px);transition:all .3s}
+.glass:hover{border-color:rgba(129,140,248,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+
+/* ── About ── */
+.about-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+@media(max-width:800px){.about-cards{grid-template-columns:1fr}}
+.about-card{padding:1.75rem;border-radius:16px;background:var(--surface);border:1px solid var(--border);transition:border-color .3s,transform .3s}
+.about-card:hover{border-color:rgba(129,140,248,0.4);transform:translateY(-3px)}
+.about-card-icon{font-size:1.75rem;margin-bottom:1rem}
+.about-card p{color:var(--muted);font-size:.95rem;line-height:1.7}
+.about-card p strong{color:var(--text)}
+
+/* ── Experience ── */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--indigo),var(--cyan),transparent)}
+.exp-card{position:relative;padding:1.5rem 1.75rem;margin-bottom:1.5rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:all .3s}
+.exp-card::before{content:'';position:absolute;left:-2.4rem;top:1.75rem;width:10px;height:10px;border-radius:50%;background:var(--grad2);box-shadow:0 0 10px rgba(99,102,241,0.6)}
+.exp-card:hover{border-color:rgba(129,140,248,0.3);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
+.exp-title{font-weight:700;font-size:1.05rem}
+.exp-company{color:var(--indigo);font-weight:600}
+.exp-date{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--muted);white-space:nowrap}
+.exp-bullets{list-style:none;margin-top:.75rem}
+.exp-bullets li{color:var(--muted);font-size:.9rem;padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--indigo)}
+.exp-bullets li strong{color:var(--text)}
+.tag-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.tag{font-size:.72rem;padding:.2rem .6rem;border-radius:100px;background:rgba(129,140,248,0.1);color:var(--indigo);border:1px solid rgba(129,140,248,0.2);font-family:'JetBrains Mono',monospace}
+.tag.cyan{background:rgba(34,211,238,0.1);color:var(--cyan);border-color:rgba(34,211,238,0.2)}
+
+/* ── Projects ── */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.proj-card{padding:1.75rem;border-radius:16px;background:var(--surface);border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
+.proj-card::after{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .3s;z-index:0}
+.proj-card:hover{transform:translateY(-6px);box-shadow:0 25px 50px rgba(0,0,0,0.4)}
+.proj-card:hover::after{opacity:.04}
+.proj-card>*{position:relative;z-index:1}
+.proj-icon{width:48px;height:48px;border-radius:12px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
+.proj-title{font-weight:700;margin-bottom:.5rem;font-size:1.05rem}
+.proj-desc{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:1rem}
+
+/* ── Skills ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.skill-group{padding:1.5rem;border-radius:12px;background:var(--surface);border:1px solid var(--border)}
+.skill-group-title{font-weight:600;margin-bottom:1rem;font-size:.9rem;color:var(--text);display:flex;align-items:center;gap:.5rem}
+.skill-group-title span{font-size:1.1rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.skill-tag{font-size:.8rem;padding:.3rem .75rem;border-radius:8px;background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border);transition:all .2s}
+.skill-tag:hover{border-color:var(--indigo);color:var(--indigo)}
+
+/* ── Chatbot ── */
+#chat{background:var(--bg2);padding:6rem 2rem}
+.chat-container{max-width:800px;margin:0 auto}
+.chat-header{text-align:center;margin-bottom:3rem}
+.chat-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--cyan);border:1px solid rgba(34,211,238,0.3);padding:.4rem 1rem;border-radius:100px;margin-bottom:1rem;background:rgba(34,211,238,0.05)}
+.chat-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.chat-box{border-radius:20px;border:1px solid var(--border);overflow:hidden;background:rgba(7,8,15,0.8);backdrop-filter:blur(20px)}
+.chat-messages{height:420px;overflow-y:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.chat-messages::-webkit-scrollbar{width:4px}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(129,140,248,0.3);border-radius:2px}
+.msg{max-width:80%;padding:.875rem 1.1rem;border-radius:16px;font-size:.9rem;line-height:1.6;animation:msgIn .2s ease-out}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.msg-bot{background:var(--surface);border:1px solid var(--border);border-bottom-left-radius:4px;align-self:flex-start;color:var(--text)}
+.msg-user{background:var(--grad2);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg-bot .bot-label{font-size:.7rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;margin-bottom:.3rem;font-weight:600}
+.typing{display:flex;gap:4px;padding:.875rem 1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;border-bottom-left-radius:4px;align-self:flex-start;width:fit-content}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--indigo);animation:typing-dot 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing-dot{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-6px);opacity:1}}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.5rem;border-top:1px solid var(--border)}
+.suggestion{font-size:.8rem;padding:.4rem .9rem;border-radius:100px;background:rgba(129,140,248,0.1);color:var(--indigo);border:1px solid rgba(129,140,248,0.2);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.suggestion:hover{background:rgba(129,140,248,0.2)}
+.chat-input-row{display:flex;gap:.75rem;padding:1rem 1.5rem;border-top:1px solid var(--border)}
+#chat-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s}
+#chat-input:focus{border-color:var(--indigo)}
+#chat-input::placeholder{color:var(--muted)}
+#chat-send{background:var(--grad2);color:#fff;border:none;border-radius:10px;padding:.75rem 1.25rem;cursor:pointer;font-weight:600;font-size:.85rem;transition:all .2s;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.4rem}
+#chat-send:hover{transform:scale(1.05)}
+
+/* ── Contact ── */
+.contact-grid{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.contact-card{display:flex;align-items:center;gap:.75rem;padding:1rem 1.75rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all .3s;font-weight:500}
+.contact-card:hover{border-color:var(--indigo);color:var(--indigo);transform:translateY(-3px)}
+.contact-card svg{width:20px;height:20px}
+
+/* ── Footer ── */
+footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace}
+
+/* ── Fade-in on scroll ── */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">tdv.dev</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#chat">Ask AI</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-tag">⚡ Open to new opportunities</div>
+    <h1 class="name"><span class="name-grad">Tejeshree</span><br>Dali Venugopal</h1>
+    <div class="typewriter-wrap">
+      <span class="typewriter-prefix">I build</span>
+      <span id="typewriter"></span><span class="cursor"></span>
+    </div>
+    <p class="hero-desc">Software Development Engineer at Amazon Web Services, building developer tools and AI-powered observability features used by customers globally — and exploring GenAI on the side.</p>
+    <div class="hero-btns">
+      <a href="#chat" class="btn btn-primary">Ask me anything ✦</a>
+      <a href="#experience" class="btn btn-ghost">View my work</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <h2 class="section-title">Who I <span>Am</span></h2>
+  <div class="about-cards">
+    <div class="about-card">
+      <div class="about-card-icon">🏗️</div>
+      <p>I'm a <strong>Software Development Engineer at Amazon Web Services</strong>, working on CloudWatch Application Signals — building observability tools that help customers understand their distributed systems at scale across 28 regions.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">🤖</div>
+      <p>I'm deeply interested in <strong>AI and GenAI</strong>. Outside of AWS, I'm building AI systems using LangChain, LangGraph, and MCP — experimenting with agents, RAG, and prompt engineering to understand how LLMs can solve real problems.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">🎓</div>
+      <p>I hold an <strong>MS in Computer Science</strong> from Cal State East Bay (GPA: 4.0) and love turning complex engineering problems into clean, scalable solutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-in">
+  <h2 class="section-title">Where I've <span>Worked</span></h2>
+  <div class="timeline">
+
+    <div class="exp-card">
+      <div class="exp-header">
         <div>
-          <p>I'm a Computer Science Grad Student at Cal State University - East Bay. I'm very passionate about the tech ecosystem. I have been told that I'm a creative thinker and always find opportunities to improve myself and the things around me.
-          I'm fascinated by the growth of software and computer technology. My main motive is to enhance my development skills and deliver accessible and user-friendly digital experiences</p>
-          <!-- <p>Experienced Software Engineer with a demonstrated history of working on software applications built using Java, Python.</p> -->
+          <div class="exp-title">Software Development Engineer</div>
+          <div class="exp-company">Amazon Web Services</div>
         </div>
-        <section>
-          <h2>SKILLS</h2>
-          <h3> Languages and Web Technologies</h3>
-          <ul>
-            <li>Java</li>
-            <li>SpringBoot </li>
-            <li>Python</li>
-            <li> HTML </li>
-            <li> CSS </li>
-            <li> JavaScript </li>
-          </ul>
-          <h3> Databases</h3>
-            <ul>
-              <li>MySQL</li>
-              <li>SQLite </li>
-              <li>MongoDB</li>
-              <li>Cassandra</li>
-            </ul>
+        <div class="exp-date">June 2024 – Present</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Designed and developed <strong>Application Signals Lite</strong> that auto-discovers uninstrumented AWS resources across all service relationship types in 28 regions, eliminating manual instrumentation and unlocking full-stack observability for customers at scale.</li>
+        <li>Architected CDK test infrastructure across 28 regions replacing an 11-microservice legacy system — cutting deployment time <strong>45→15 min</strong>, costs by <strong>65%</strong>, producing reusable constructs adopted across teams.</li>
+        <li>Designed and developed <strong>SLO capabilities for RUM AppMonitors and Synthetics Canaries</strong>, enabling service-level objectives on client-side performance and synthetic availability across all commercial regions.</li>
+        <li>Architected the extension of CloudWatch Application Signals to support <strong>government customers</strong> by designing federally-required API endpoints, unlocking a new segment of federal users.</li>
+        <li>Built a <strong>real-time system</strong> that automatically detects and categorizes AWS resource changes during performance incidents, helping customers diagnose issues faster.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">CloudWatch</span><span class="tag">CDK</span><span class="tag">Java</span><span class="tag">CloudTrail</span><span class="tag">FedRAMP</span><span class="tag cyan">RUM</span><span class="tag cyan">SLOs</span>
+      </div>
+    </div>
 
-          <h3>Cloud Platforms</h3>
-            <ul>
-              <li>AWS</li>
-              <!-- <li>GCP</li> -->
-            </ul>
-        </section>
-      </section>
-
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-      <section class="work">
-        <div class="section-format-work">
-          <h2>Work Experience</h2>
-          <section>
-            <h3>Software Development Engineer - Intern</h3>
-            <p><i>Audible Inc (Amazon Company)</i></p>
-            <p><i>May 2023 - Aug 2023</i></p>
-            <!-- <p><strong>Development of application</strong></p> -->
-            <p><b>Responsibilities:</b></p>
-            <ul>
-              <li>Designed and developed features for acx.com to update and manage audio book metadata.</li>
-              <li>Engaged in full stack development, created UI and backend RESTful services to validate audiobook related
-metadata changes on admin portal which reduced on call production incidents.</li>
-              <li>Utilized common object-oriented design patterns in the backend to make the code extendible.</li>
-              <li>Took complete ownership of the feature and was involved in all phases of software development lifecycle such as
-discovery, design, development, testing and release to production.</li>
-              <li>Played a key role in conducting code reviews for pull requests, ensuring code quality and compliance with established coding standards.</li>
-              <li>Restructured existing legacy code into modular code by removing all deprecated methods and by converting class components into functional components.</li>
-
-            </ul>
-          </section>
-          
-          <section>
-            <h3>Graduate Student Assistant</h3>
-            <p><i>California State University - East Bay</i></p>
-            <p><i>March 2022 - Present</i></p>
-            <!-- <p><strong>Teaching assistant for the course Object-oriented Design.</strong></p> -->
-            <p><b>Responsibilities:</b></p>
-            <ul>
-              <li>Assist project investigators with grant-funded expenses, reimbursements, payments, subcontracts and various other post-award related forms</li>
-              <li>Plan and Coordinate numerous meetings and events </li>
-              <li>Develop flyers for promoting research on and off-campus using social media platforms</li>
-            </ul>
-          </section>
-          
-          <section>
-            <h3>Software Engineer</h3>
-            <p><i>Accenture</i></p>
-            <p><i>June 2019 - April 2021</i></p>
-            <!-- <p><strong>Development of application</strong></p> -->
-            <p><b>Responsibilities:</b></p>
-            <ul>
-              <li>Developed a Kafka consumer application that updates the items in the inventory database.
-                Used Spring boot for back-end development and Cassandra for database.</li>
-              <li>Integrated the project with a continuous delivery platform and went an extra mile to build an application for continuous monitoring.</li>
-              <li>Contributed significantly towards design, maintaining, and streamlining of an end-end continuous
-                delivery pipeline solution to enable one click build deployments saving 90 man hours</li>
-              <li>Developed robust RESTful APIs and microservices that is consumed by inventory management web portals</li>
-              <!-- <li>Followed Test driven development and integrated with internal cloud native tools such as Docker and Kubernetes.</li>
-              <li>Collaborated with frontend engineers to integrate user facing elements with server-side logic.</li> -->
-
-            </ul>
-          </section>
-
-          <section>
-            <h3>Full Stack Intern</h3>
-            <p><i>Spectrus Informatics Private Ltd</i></p>
-            <p><i>Feb 2018 - May 2018</i></p>
-            <!-- <p><strong>Development of application and base software.</strong></p> -->
-            <p><b>Responsibilities:</b></p>
-            <ul>
-              <li>Built an interactive UI for an online boutique. Enabled and developed features to browse, shop and process items using Angular2, HTML, CSS, JavaScript and SQL</li>
-              <li>Spearheaded towards architecture and development for both frontend and backend aspects of the application.</li>
-
-
-            </ul>
-          </section>
-          <!-- End of Job block. -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Software Development Engineer</div>
+          <div class="exp-company">CURAJOY</div>
         </div>
-      </section>
+        <div class="exp-date">Feb – June 2024</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Integrated <strong>OpenAI's API</strong> for dynamic AI-generated UI content, increasing user interaction by 40%.</li>
+        <li>Developed personalized activities feature boosting user engagement by <strong>30%</strong>.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">OpenAI API</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag cyan">AI Integration</span>
+      </div>
+    </div>
 
-       <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
-      <section class="projects">
-        <div class="section-format">
-          <h2>Projects</h2>
-          <p>View some of my selected projects below. More information can be found at my <a href="https://github.com/TEJESHREE">Github Repository</a>.</p>
-
-          <section class="notLast-proj project-type">
-            <img src="images/invite.jpg" alt="Invitation System">
-            <h3>Invitation System</h3>
-            <p>Designed and developed a booking system to track, register and manage events using HTML, CSS, and JavaScript. Please request access to Git Repository to view source files.</p>
-            <a href="https://github.com/TEJESHREE/InvitationSystem" target="_blank" class="btn">View Source Code</a>
-
-          </section>
-
-          <section class="project-type">
-            <img src="images/food_order.jpg" alt="Online Food Discovery Bot">
-            <h3>Online Food Discovery Bot</h3>
-            <p> Built and prototyped a bot to recommend restaurants and menus to users using Machine Learning.</p>
-            <p> Additionally, users can place an order for pickup or delivery. Telegram API, Python, Flask, SQLite3, IBM Watson were the technologies used. Please request access to Git Repository to view source files.</p>
-            <a href="https://github.com/TEJESHREE/food_ordering-bot" target="_blank" class="btn">View Source Code</a>
-          </section>
-          <!-- End of Project block. -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Software Development Engineer Intern</div>
+          <div class="exp-company">Audible Inc. (Amazon)</div>
         </div>
-      </section>
+        <div class="exp-date">May – Aug 2023</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Built UI and backend <strong>RESTful services</strong> to validate audiobook metadata on acx.com, reducing on-call incidents by <strong>80%</strong>.</li>
+        <li>Developed full-stack features applying <strong>Factory and Strategy patterns</strong> for extensible backend code.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">Java</span><span class="tag">REST APIs</span><span class="tag">React</span><span class="tag cyan">Full Stack</span>
+      </div>
+    </div>
 
-      <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
-      <section class="education">
-        <div class="section-format">
-          <h2>Education</h2>
-
-          <section>
-            <h3><strong>California State University - East Bay , San Francisco, CA</strong></h3>
-            <p><i>MS in Computer Science, Jan. 2022 – Dec 2023</i></p>
-            <p><i>GPA - 4.0</i></p>
-          </section>
-          <section>
-            <h3><strong>RNS Institute of Technology, Bengaluru, India</strong></h3>
-            <p><i>Bachelor of Engineering in Information Science Engineering</i></p>
-          </section>
-          <!-- End of School block. -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Software Engineer</div>
+          <div class="exp-company">Accenture</div>
         </div>
-      </section>
+        <div class="exp-date">June 2019 – May 2021</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Built a <strong>real-time event-driven inventory system</strong> for fulfillment centers across Canada, achieving 95% accuracy.</li>
+        <li>Developed REST APIs and owned an <strong>end-to-end CI/CD pipeline</strong> enabling one-click deployments.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Cassandra</span><span class="tag cyan">CI/CD</span>
+      </div>
+    </div>
 
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer id="contact">
-        <div class="section-format">
-          <h3>Let's Keep in Touch!</h3>
+  </div>
+</section>
 
-          <!-- Social media and contact links. Add or remove any networks. -->
-          <div class="social">
-            <a href="https://www.linkedin.com/in/tejeshreevenugopal/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/TEJESHREE" target="_blank"><span class="fab fa-github"></i></a>
-            <a href="mailto:tdalivenugopal@horizon.csueastbay.edu" target="_blank"><i class="fa fa-envelope"></i></a>
-          </div>
-          <div>
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+  <h2 class="section-title">What I've <span>Built</span></h2>
+  <div class="projects-grid">
 
-            <div class="col-six tab-full pull-left"><div class=copyright><span>©Tejeshree Dali Venugopal</span></div></div>
+    <div class="proj-card glass">
+      <div class="proj-icon">🤖</div>
+      <div class="proj-title">MCP AI Agent</div>
+      <p class="proj-desc">Built next-gen autonomous agents using Model Context Protocol (MCP), enabling multi-step tool integration and reasoning across external services.</p>
+      <div class="tag-row">
+        <span class="tag">MCP</span><span class="tag">Python</span><span class="tag cyan">Agentic AI</span>
+      </div>
+    </div>
 
-            </div
-        </div>
-      </footer>
-    </main>
-  </body>
+    <div class="proj-card glass">
+      <div class="proj-icon">✨</div>
+      <div class="proj-title">GenAI App with Claude API</div>
+      <p class="proj-desc">Built a context-aware AI assistant using Anthropic's Claude API — experimenting with prompt engineering techniques like few-shot prompting, chain-of-thought, and structured outputs to understand how LLMs reason and behave.</p>
+      <div class="tag-row">
+        <span class="tag">Claude API</span><span class="tag">Prompt Engineering</span><span class="tag">Python</span><span class="tag cyan">Anthropic</span>
+      </div>
+    </div>
+
+    <div class="proj-card glass">
+      <div class="proj-icon">🧠</div>
+      <div class="proj-title">Multimodal AI Assistant</div>
+      <p class="proj-desc">RAG system supporting text and image retrieval with multimodal embeddings, persistent memory, and corrective RAG for error-resistant pipelines.</p>
+      <div class="tag-row">
+        <span class="tag">Multimodal</span><span class="tag">LangChain</span><span class="tag cyan">Vector DB</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+  <h2 class="section-title">What I <span>Know</span></h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title"><span>⚡</span> Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript</span><span class="skill-tag">SQL</span><span class="skill-tag">Linux</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title"><span>🤖</span> AI / ML</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LangChain</span><span class="skill-tag">LangGraph</span><span class="skill-tag">RAG</span><span class="skill-tag">MCP</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Vector DBs</span><span class="skill-tag">LangSmith</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title"><span>☁️</span> Cloud & AWS</div>
+      <div class="skill-tags">
+        <span class="skill-tag">CloudWatch</span><span class="skill-tag">CDK</span><span class="skill-tag">CloudTrail</span><span class="skill-tag">RUM</span><span class="skill-tag">Synthetics</span><span class="skill-tag">FedRAMP</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title"><span>🛠️</span> Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Spring Boot</span><span class="skill-tag">Docker</span><span class="skill-tag">Kafka</span><span class="skill-tag">Git</span><span class="skill-tag">Grafana</span><span class="skill-tag">Maven</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+<div id="chat">
+  <div class="chat-container">
+    <div class="chat-header fade-in">
+      <div class="chat-badge">AI-powered · Ask me anything</div>
+      <h2 class="section-title" style="text-align:center;margin-bottom:.5rem">Chat with My <span>Portfolio</span></h2>
+      <p style="color:var(--muted);text-align:center;font-size:.95rem">Ask anything about my experience, projects, or skills.</p>
+    </div>
+    <div class="chat-box fade-in">
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-suggestions" id="suggestions">
+        <button class="suggestion" onclick="sendSuggestion(this)">What do you do at AWS?</button>
+        <button class="suggestion" onclick="sendSuggestion(this)">Tell me about your AI projects</button>
+        <button class="suggestion" onclick="sendSuggestion(this)">What are your strongest skills?</button>
+        <button class="suggestion" onclick="sendSuggestion(this)">What's Application Signals Lite?</button>
+      </div>
+      <div class="chat-input-row">
+        <input id="chat-input" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendMessage()">
+        <button id="chat-send" onclick="sendMessage()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <h2 class="section-title" style="text-align:center">Let's <span>Connect</span></h2>
+  <div class="contact-grid">
+    <a href="https://www.linkedin.com/in/tejeshreevenugopal/" target="_blank" class="contact-card">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/TEJESHREE" target="_blank" class="contact-card">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="mailto:tejeshreedv@gmail.com" class="contact-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>Built with curiosity · Tejeshree Dali Venugopal · 2025</p>
+</footer>
+
+<script>
+// ── Typewriter ──
+const roles = ['AI agents.','production systems.','observability tools.','developer tools.'];
+let ri=0,ci=0,deleting=false;
+const tw=document.getElementById('typewriter');
+function type(){
+  const word=roles[ri];
+  tw.textContent=deleting?word.slice(0,ci--):word.slice(0,ci++);
+  if(!deleting&&ci===word.length+1){setTimeout(()=>deleting=true,1800);setTimeout(type,100);return}
+  if(deleting&&ci<0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,400);return}
+  setTimeout(type,deleting?60:90);
+}
+type();
+
+// ── Scroll fade ──
+const observer=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+// ── Chatbot ──
+const KB = [
+  {k:['aws','amazon web services','current job','current role','work at'],r:"At AWS, I'm an SDE on the CloudWatch Application Signals team. My key projects include:\n\n• **Application Signals Lite** — auto-discovers uninstrumented AWS resources across all service relationship types in 28 regions, unlocking full-stack observability at scale\n• **CDK Test Infrastructure** — replaced an 11-microservice legacy system, cutting deployment time 45→15 min and costs by 65%\n• **SLO capabilities** for RUM AppMonitors and Synthetics Canaries across all commercial regions\n• **FedRAMP compliance** for US/Canadian government customers\n• **Real-time CloudTrail event ingestion** across 10 AWS service types in 28 regions"},
+  {k:['application signals','signals lite','observability'],r:"Application Signals Lite is a feature I designed and built at AWS. It automatically discovers uninstrumented AWS resources across all service relationship types in 28 regions — so customers get full-stack observability without having to manually instrument anything. It was a key part of the GA launch for CloudWatch Application Signals."},
+  {k:['fedramp','federal','government','compliance','security'],r:"I architected federal security compliance for CloudWatch Application Signals, unblocking service availability in US and Canadian government regions and enabling FedRAMP certification for federal customers. This involved navigating strict government security requirements across multiple regulatory frameworks."},
+  {k:['slo','rum','synthetics','canary'],r:"I designed and built SLO (Service Level Objective) capabilities for RUM AppMonitors and Synthetics Canaries in CloudWatch Application Signals. This lets customers define service-level objectives on client-side performance and synthetic availability — shipped across all AWS commercial regions."},
+  {k:['cdk','test infra','infrastructure','vpc'],r:"I architected a CDK test infrastructure project where I replaced an 11-microservice legacy system with a lightweight architecture across 28 regions. The result: deployment time dropped from 45 to 15 minutes, costs fell by 65%, and the reusable CDK constructs were adopted across teams for region builds and security testing."},
+  {k:['mcp','model context protocol','agent'],r:"I built an AI agent system using Model Context Protocol (MCP) — a framework that lets AI models seamlessly integrate with external tools and services. My MCP agent can perform multi-step reasoning, call external APIs, and complete complex tasks autonomously. It's directly aligned with where the industry is heading with agentic AI."},
+  {k:['rag','retrieval','research assistant','langchain','langgraph'],r:"I built an Agentic RAG Research Assistant using LangGraph with:\n\n• **Hybrid vector search** combining dense (FAISS/Pinecone) and sparse retrieval\n• **Multi-agent architecture** where specialized agents collaborate on research tasks\n• **LangSmith evaluation** for tracking retrieval quality and debugging pipelines\n• **Persistent memory** for context retention across sessions\n\nThis goes well beyond basic RAG — it's an autonomous research system."},
+  {k:['multimodal','image','text retrieval'],r:"My Multimodal AI Assistant is a RAG system that handles both text and image retrieval using multimodal embeddings. It also features persistent memory for context retention and Corrective RAG — a technique that self-evaluates retrieval quality and corrects errors before generating responses, making it much more reliable."},
+  {k:['project','built','side project'],r:"Here are my key projects:\n\n✨ **GenAI App with Claude API** — prompt engineering, few-shot & chain-of-thought with Anthropic's Claude\n🤖 **MCP AI Agent** — autonomous agents using Model Context Protocol\n🎨 **Multimodal AI Assistant** — text + image RAG with corrective pipelines\n\nAnd at AWS: Application Signals Lite, CDK test infrastructure, SLO capabilities, FedRAMP compliance."},
+  {k:['curajoy','openai','startup'],r:"At CURAJOY (a mental health tech startup), I integrated OpenAI's API to generate dynamic, personalized AI content in the UI based on user prompts — increasing user interaction by 40%. I also built a personalized activities feature that boosted engagement by 30%."},
+  {k:['audible','intern','internship'],r:"I interned at Audible (an Amazon company) where I built UI and backend RESTful services to validate audiobook metadata changes on the acx.com dashboard. The work reduced on-call production incidents by 80%. I also built customer request management tools and applied Factory and Strategy design patterns for extensible code."},
+  {k:['accenture','inventory','kafka'],r:"At Accenture, I built a real-time event-driven inventory tracking system for fulfillment centers across Canada using Spring Boot and Kafka, achieving 95% system accuracy. I also owned the end-to-end CI/CD pipeline for one-click deployments."},
+  {k:['skill','tech stack','language','tool','know'],r:"My tech stack:\n\n**Languages:** Java, Python, TypeScript, JavaScript, SQL\n**AI/ML:** LangChain, LangGraph, LangSmith, RAG, MCP, OpenAI API, Vector DBs (FAISS, Pinecone)\n**AWS:** CloudWatch, CDK, CloudTrail, RUM, Synthetics, FedRAMP\n**Tools:** Spring Boot, Docker, Kafka, Git, Grafana, Splunk, Maven"},
+  {k:['education','degree','ms','master','gpa','university','csueb'],r:"I have an MS in Computer Science from Cal State University - East Bay (GPA: 4.0/4.0, graduated Dec 2023) and a BE in Information Science from RNS Institute of Technology (GPA: 3.9/4.0)."},
+  {k:['contact','email','reach','linkedin','hire','available'],r:"You can reach me at:\n📧 tejeshreedv@gmail.com\n💼 linkedin.com/in/tejeshreevenugopal\n💻 github.com/TEJESHREE\n\nI'm open to new opportunities, especially roles at the intersection of AI and engineering!"},
+  {k:['hello','hi','hey','who are you'],r:"Hey! 👋 I'm Tejeshree's digital twin! I know everything about her work at AWS, her AI projects (MCP agents, RAG systems), her skills, and her background. What would you like to know?"},
+  {k:['who is tejeshree','about you','tell me about yourself'],r:"Tejeshree is a Software Development Engineer at Amazon Web Services, working on CloudWatch Application Signals — building observability infrastructure deployed across 28 AWS regions globally. She's also passionate about AI, building agentic systems using LangGraph, MCP, and RAG on the side. She holds an MS in CS from CSUEB (GPA: 4.0) and has 5+ years of engineering experience."},
+];
+
+function getBotResponse(q) {
+  const lower = q.toLowerCase();
+  for (const item of KB) {
+    if (item.k.some(k => lower.includes(k))) return item.r;
+  }
+  return "That's a great question! I'm best at answering about Tejeshree's experience at AWS, her AI projects, skills, or background. Try asking: *What do you do at AWS?*, *Tell me about your AI projects*, or *What's your tech stack?*";
+}
+
+function formatMsg(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    .replace(/•/g,'<span style="color:var(--indigo)">•</span>')
+    .replace(/\n/g,'<br>');
+}
+
+function addMsg(text, isUser) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'msg ' + (isUser ? 'msg-user' : 'msg-bot');
+  if (!isUser) div.innerHTML = '<div class="bot-label">AI ✦</div>' + formatMsg(text);
+  else div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'typing'; div.id = 'typing-indicator';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  const t = document.getElementById('typing-indicator');
+  if (t) t.remove();
+}
+
+function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const q = input.value.trim();
+  if (!q) return;
+  input.value = '';
+  document.getElementById('suggestions').style.display = 'none';
+  addMsg(q, true);
+  showTyping();
+  setTimeout(() => {
+    hideTyping();
+    addMsg(getBotResponse(q), false);
+  }, 700 + Math.random() * 500);
+}
+
+function sendSuggestion(btn) {
+  document.getElementById('chat-input').value = btn.textContent;
+  sendMessage();
+}
+
+// Welcome message
+setTimeout(() => {
+  addMsg("Hey! 👋 I'm Tejeshree's digital twin! Ask me anything — her AWS work, AI projects, skills, or background.", false);
+}, 500);
+</script>
+</body>
 </html>
