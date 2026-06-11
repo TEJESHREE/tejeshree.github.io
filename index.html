@@ -22,19 +22,16 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-
 /* ── Scrollbar ── */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:rgba(129,140,248,0.4);border-radius:3px}
-
 /* ── Nav ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(7,8,15,0.8);border-bottom:1px solid var(--border);transition:all .3s}
 .nav-logo{font-family:'JetBrains Mono',monospace;font-size:.9rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--indigo)}
-
 /* ── Hero ── */
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:2rem}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(99,102,241,0.15) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(6,182,212,0.1) 0%,transparent 60%)}
@@ -58,17 +55,14 @@ h1.name{font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;margin-
 .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.75rem;animation:bounce 2s infinite}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 .scroll-hint svg{width:20px;height:20px}
-
 /* ── Sections ── */
 section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
 .section-tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem}
 h2.section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:3rem}
 h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
 /* ── Cards ── */
 .glass{background:var(--surface);border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(10px);transition:all .3s}
 .glass:hover{border-color:rgba(129,140,248,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-
 /* ── About ── */
 .about-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:800px){.about-cards{grid-template-columns:1fr}}
@@ -77,7 +71,6 @@ h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-co
 .about-card-icon{font-size:1.75rem;margin-bottom:1rem}
 .about-card p{color:var(--muted);font-size:.95rem;line-height:1.7}
 .about-card p strong{color:var(--text)}
-
 /* ── Experience ── */
 .timeline{position:relative;padding-left:2rem}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--indigo),var(--cyan),transparent)}
@@ -95,7 +88,6 @@ h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-co
 .tag-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
 .tag{font-size:.72rem;padding:.2rem .6rem;border-radius:100px;background:rgba(129,140,248,0.1);color:var(--indigo);border:1px solid rgba(129,140,248,0.2);font-family:'JetBrains Mono',monospace}
 .tag.cyan{background:rgba(34,211,238,0.1);color:var(--cyan);border-color:rgba(34,211,238,0.2)}
-
 /* ── Projects ── */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
 .proj-card{padding:1.75rem;border-radius:16px;background:var(--surface);border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
@@ -106,7 +98,6 @@ h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-co
 .proj-icon{width:48px;height:48px;border-radius:12px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
 .proj-title{font-weight:700;margin-bottom:.5rem;font-size:1.05rem}
 .proj-desc{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:1rem}
-
 /* ── Skills ── */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
 .skill-group{padding:1.5rem;border-radius:12px;background:var(--surface);border:1px solid var(--border)}
@@ -115,7 +106,6 @@ h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-co
 .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
 .skill-tag{font-size:.8rem;padding:.3rem .75rem;border-radius:8px;background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border);transition:all .2s}
 .skill-tag:hover{border-color:var(--indigo);color:var(--indigo)}
-
 /* ── Chatbot ── */
 #chat{background:var(--bg2);padding:6rem 2rem}
 .chat-container{max-width:800px;margin:0 auto}
@@ -146,23 +136,19 @@ h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-co
 #chat-input::placeholder{color:var(--muted)}
 #chat-send{background:var(--grad2);color:#fff;border:none;border-radius:10px;padding:.75rem 1.25rem;cursor:pointer;font-weight:600;font-size:.85rem;transition:all .2s;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.4rem}
 #chat-send:hover{transform:scale(1.05)}
-
 /* ── Contact ── */
 .contact-grid{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
 .contact-card{display:flex;align-items:center;gap:.75rem;padding:1rem 1.75rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all .3s;font-weight:500}
 .contact-card:hover{border-color:var(--indigo);color:var(--indigo);transform:translateY(-3px)}
 .contact-card svg{width:20px;height:20px}
-
 /* ── Footer ── */
 footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace}
-
 /* ── Fade-in on scroll ── */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <div class="nav-logo">tdv.dev</div>
@@ -175,7 +161,6 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
 <!-- HERO -->
 <div id="hero">
   <div class="hero-bg"></div>
@@ -191,6 +176,7 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
     <div class="hero-btns">
       <a href="#chat" class="btn btn-primary">Ask me anything ✦</a>
       <a href="#experience" class="btn btn-ghost">View my work</a>
+      <a href="TejeshreeDaliVenugopalResume.pdf" download class="btn btn-ghost">Download Resume ↓</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -198,7 +184,6 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
   </div>
 </div>
-
 <!-- ABOUT -->
 <section id="about" class="fade-in">
   <h2 class="section-title">Who I <span>Am</span></h2>
@@ -217,12 +202,10 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
     </div>
   </div>
 </section>
-
 <!-- EXPERIENCE -->
 <section id="experience" class="fade-in">
   <h2 class="section-title">Where I've <span>Worked</span></h2>
   <div class="timeline">
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -242,7 +225,6 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
         <span class="tag">Java</span><span class="tag">CDK</span><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag cyan">AWS</span><span class="tag cyan">AI</span>
       </div>
     </div>
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -259,7 +241,6 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
         <span class="tag">OpenAI API</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag cyan">AI Integration</span>
       </div>
     </div>
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -276,7 +257,6 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
         <span class="tag">Java</span><span class="tag">REST APIs</span><span class="tag">React</span><span class="tag cyan">Full Stack</span>
       </div>
     </div>
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -287,23 +267,19 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-
       </div>
       <ul class="exp-bullets">
         <li>Built a <strong>real-time event-driven inventory system</strong> for fulfillment centers across Canada, achieving 95% accuracy.</li>
-        <li>Developed robust REST APIs and microservices that is consumed by inventory management web portals..</li>
-        <li>Played a key role in architect, maintain, and streamlining of an end-end continuous delivery pipeline solution to
-enable one click build deployments.</li>
+        <li>Developed robust REST APIs and microservices consumed by inventory management web portals.</li>
+        <li>Played a key role in architecting and streamlining an end-to-end continuous delivery pipeline enabling one-click build deployments.</li>
       </ul>
       <div class="tag-row">
         <span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Cassandra</span>
       </div>
     </div>
-
   </div>
 </section>
-
 <!-- PROJECTS -->
 <section id="projects" class="fade-in">
   <h2 class="section-title">What I've <span>Built</span></h2>
   <div class="projects-grid">
-
     <div class="proj-card glass">
       <div class="proj-icon">🤖</div>
       <div class="proj-title">MCP AI Agent</div>
@@ -312,7 +288,6 @@ enable one click build deployments.</li>
         <span class="tag">MCP</span><span class="tag">Python</span><span class="tag cyan">Agentic AI</span>
       </div>
     </div>
-
     <div class="proj-card glass">
       <div class="proj-icon">✨</div>
       <div class="proj-title">GenAI App with Claude API</div>
@@ -321,7 +296,6 @@ enable one click build deployments.</li>
         <span class="tag">Claude API</span><span class="tag">Prompt Engineering</span><span class="tag">Python</span><span class="tag cyan">Anthropic</span>
       </div>
     </div>
-
     <div class="proj-card glass">
       <div class="proj-icon">🧠</div>
       <div class="proj-title">Multimodal AI Assistant</div>
@@ -330,10 +304,8 @@ enable one click build deployments.</li>
         <span class="tag">Multimodal</span><span class="tag">LangChain</span><span class="tag cyan">Vector DB</span>
       </div>
     </div>
-
   </div>
 </section>
-
 <!-- SKILLS -->
 <section id="skills" class="fade-in">
   <h2 class="section-title">What I <span>Know</span></h2>
@@ -364,7 +336,6 @@ enable one click build deployments.</li>
     </div>
   </div>
 </section>
-
 <!-- CHAT -->
 <div id="chat">
   <div class="chat-container">
@@ -391,7 +362,6 @@ enable one click build deployments.</li>
     </div>
   </div>
 </div>
-
 <!-- CONTACT -->
 <section id="contact" class="fade-in">
   <h2 class="section-title" style="text-align:center">Let's <span>Connect</span></h2>
@@ -410,13 +380,10 @@ enable one click build deployments.</li>
     </a>
   </div>
 </section>
-
 <footer>
   <p>Built with curiosity · Tejeshree Dali Venugopal · 2026</p>
 </footer>
-
 <script>
-// ── Typewriter ──
 const roles = ['AI agents.','production systems.','observability tools.','developer tools.'];
 let ri=0,ci=0,deleting=false;
 const tw=document.getElementById('typewriter');
@@ -428,32 +395,27 @@ function type(){
   setTimeout(type,deleting?60:90);
 }
 type();
-
-// ── Scroll fade ──
 const observer=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-
-// ── Chatbot ──
 const KB = [
-  {k:['aws','amazon web services','current job','current role','work at'],r:"At AWS, I'm an SDE on the CloudWatch Application Signals team. My key projects include:\n\n• **Application Signals Lite** — auto-discovers uninstrumented AWS resources across all service relationship types in 28 regions, unlocking full-stack observability at scale\n• **CDK Test Infrastructure** — replaced an 11-microservice legacy system, cutting deployment time 45→15 min and costs by 65%\n• **SLO capabilities** for RUM AppMonitors and Synthetics Canaries across all commercial regions\n• **FedRAMP compliance** for US/Canadian government customers\n• **Real-time CloudTrail event ingestion** across 10 AWS service types in 28 regions"},
-  {k:['application signals','signals lite','observability'],r:"Application Signals Lite is a feature I designed and built at AWS. It automatically discovers uninstrumented AWS resources across all service relationship types in 28 regions — so customers get full-stack observability without having to manually instrument anything. It was a key part of the GA launch for CloudWatch Application Signals."},
-  {k:['fedramp','federal','government','compliance','security'],r:"I architected federal security compliance for CloudWatch Application Signals, unblocking service availability in US and Canadian government regions and enabling FedRAMP certification for federal customers. This involved navigating strict government security requirements across multiple regulatory frameworks."},
+  {k:['aws','amazon web services','current job','current role','work at'],r:"At AWS, I'm an SDE on the CloudWatch Application Signals team. My key projects include:\n\n• **Application Signals Lite** — auto-discovers uninstrumented AWS resources across all service relationship types, unlocking full-stack observability at scale\n• **SLO capabilities** for RUM AppMonitors and Synthetics Canaries across all commercial regions\n• **Non-commercial region support** — designed new API endpoints to unlock a new segment of users\n• **Real-time system** that automatically detects and categorizes AWS resource changes during performance incidents"},
+  {k:['application signals','signals lite','observability'],r:"Application Signals Lite is a feature I designed and built at AWS. It automatically discovers uninstrumented AWS resources across all service relationship types — so customers get full-stack observability without having to manually instrument anything. It was a key part of the GA launch for CloudWatch Application Signals."},
+  {k:['fedramp','federal','government','compliance','security','non commercial'],r:"I architected the extension of CloudWatch Application Signals to support non-commercial region customers by designing new API endpoints, unlocking a new segment of users."},
   {k:['slo','rum','synthetics','canary'],r:"I designed and built SLO (Service Level Objective) capabilities for RUM AppMonitors and Synthetics Canaries in CloudWatch Application Signals. This lets customers define service-level objectives on client-side performance and synthetic availability — shipped across all AWS commercial regions."},
-  {k:['cdk','test infra','infrastructure','vpc'],r:"I architected a CDK test infrastructure project where I replaced an 11-microservice legacy system with a lightweight architecture across 28 regions. The result: deployment time dropped from 45 to 15 minutes, costs fell by 65%, and the reusable CDK constructs were adopted across teams for region builds and security testing."},
-  {k:['mcp','model context protocol','agent'],r:"I built an AI agent system using Model Context Protocol (MCP) — a framework that lets AI models seamlessly integrate with external tools and services. My MCP agent can perform multi-step reasoning, call external APIs, and complete complex tasks autonomously. It's directly aligned with where the industry is heading with agentic AI."},
-  {k:['rag','retrieval','research assistant','langchain','langgraph'],r:"I built an Agentic RAG Research Assistant using LangGraph with:\n\n• **Hybrid vector search** combining dense (FAISS/Pinecone) and sparse retrieval\n• **Multi-agent architecture** where specialized agents collaborate on research tasks\n• **LangSmith evaluation** for tracking retrieval quality and debugging pipelines\n• **Persistent memory** for context retention across sessions\n\nThis goes well beyond basic RAG — it's an autonomous research system."},
-  {k:['multimodal','image','text retrieval'],r:"My Multimodal AI Assistant is a RAG system that handles both text and image retrieval using multimodal embeddings. It also features persistent memory for context retention and Corrective RAG — a technique that self-evaluates retrieval quality and corrects errors before generating responses, making it much more reliable."},
-  {k:['project','built','side project'],r:"Here are my key projects:\n\n✨ **GenAI App with Claude API** — prompt engineering, few-shot & chain-of-thought with Anthropic's Claude\n🤖 **MCP AI Agent** — autonomous agents using Model Context Protocol\n🎨 **Multimodal AI Assistant** — text + image RAG with corrective pipelines\n\nAnd at AWS: Application Signals Lite, CDK test infrastructure, SLO capabilities, FedRAMP compliance."},
+  {k:['cdk','test infra','infrastructure','vpc'],r:"I architected the test infrastructure across 28 regions, replacing an 11-microservice legacy system. Deployment time dropped from 45 to 15 minutes, costs fell by 65%, and the reusable constructs were adopted across teams."},
+  {k:['mcp','model context protocol','agent'],r:"I built an AI agent system using Model Context Protocol (MCP) — a framework that lets AI models seamlessly integrate with external tools and services. My MCP agent can perform multi-step reasoning, call external APIs, and complete complex tasks autonomously."},
+  {k:['claude','anthropic','prompt engineering','genai app'],r:"I built a GenAI app using Anthropic's Claude API, experimenting with prompt engineering techniques like few-shot prompting, chain-of-thought reasoning, and structured outputs to understand how LLMs reason and behave."},
+  {k:['multimodal','image','text retrieval','rag'],r:"My Multimodal AI Assistant is a RAG system that handles both text and image retrieval using multimodal embeddings. It features persistent memory for context retention and Corrective RAG — a technique that self-evaluates retrieval quality and corrects errors before generating responses."},
+  {k:['project','built','side project'],r:"Here are my key projects:\n\n✨ **GenAI App with Claude API** — prompt engineering, few-shot & chain-of-thought with Anthropic's Claude\n🤖 **MCP AI Agent** — autonomous agents using Model Context Protocol\n🧠 **Multimodal AI Assistant** — text + image RAG with corrective pipelines\n\nAnd at AWS: Application Signals Lite, SLO capabilities, non-commercial region support, real-time change detection."},
   {k:['curajoy','openai','startup'],r:"At CURAJOY (a mental health tech startup), I integrated OpenAI's API to generate dynamic, personalized AI content in the UI based on user prompts — increasing user interaction by 40%. I also built a personalized activities feature that boosted engagement by 30%."},
-  {k:['audible','intern','internship'],r:"I interned at Audible (an Amazon company) where I built UI and backend RESTful services to validate audiobook metadata changes on the acx.com dashboard. The work reduced on-call production incidents by 80%. I also built customer request management tools and applied Factory and Strategy design patterns for extensible code."},
+  {k:['audible','intern','internship'],r:"I interned at Audible (an Amazon company) where I built UI and backend RESTful services to validate audiobook metadata changes on the acx.com dashboard. The work reduced on-call production incidents by 80%."},
   {k:['accenture','inventory','kafka'],r:"At Accenture, I built a real-time event-driven inventory tracking system for fulfillment centers across Canada using Spring Boot and Kafka, achieving 95% system accuracy. I also owned the end-to-end CI/CD pipeline for one-click deployments."},
-  {k:['skill','tech stack','language','tool','know'],r:"My tech stack:\n\n**Languages:** Java, Python, TypeScript, JavaScript, SQL\n**AI/ML:** LangChain, LangGraph, LangSmith, RAG, MCP, OpenAI API, Vector DBs (FAISS, Pinecone)\n**AWS:** CloudWatch, CDK, CloudTrail, RUM, Synthetics, FedRAMP\n**Tools:** Spring Boot, Docker, Kafka, Git, Grafana, Splunk, Maven"},
+  {k:['skill','tech stack','language','tool','know'],r:"My tech stack:\n\n**Languages:** Java, Python, TypeScript, JavaScript, SQL\n**AI/ML:** LangChain, LangGraph, LangSmith, RAG, MCP, OpenAI API, Vector DBs\n**AWS:** CloudWatch, CDK, CloudTrail, RUM, Synthetics\n**Tools:** Spring Boot, Docker, Kafka, Git, Grafana, Maven"},
   {k:['education','degree','ms','master','gpa','university','csueb'],r:"I have an MS in Computer Science from Cal State University - East Bay (GPA: 4.0/4.0, graduated Dec 2023) and a BE in Information Science from RNS Institute of Technology (GPA: 3.9/4.0)."},
-  {k:['contact','email','reach','linkedin','hire','available'],r:"You can reach me at:\n📧 tejeshreedv@gmail.com\n💼 linkedin.com/in/tejeshreevenugopal\n💻 github.com/TEJESHREE\n\nI'm open to new opportunities, especially roles at the intersection of AI and engineering!"},
-  {k:['hello','hi','hey','who are you'],r:"Hey! 👋 I'm Tejeshree's digital twin! I know everything about her work at AWS, her AI projects (MCP agents, RAG systems), her skills, and her background. What would you like to know?"},
-  {k:['who is tejeshree','about you','tell me about yourself'],r:"Tejeshree is a Software Development Engineer at Amazon Web Services, working on CloudWatch Application Signals — building observability infrastructure deployed across 28 AWS regions globally. She's also passionate about AI, building agentic systems using LangGraph, MCP, and RAG on the side. She holds an MS in CS from CSUEB (GPA: 4.0) and has 5+ years of engineering experience."},
+  {k:['contact','email','reach','linkedin','hire','available'],r:"You can reach me at:\n📧 tejeshreedv@gmail.com\n💼 linkedin.com/in/tejeshreevenugopal\n💻 github.com/TEJESHREE\n\nI'm open to new opportunities!"},
+  {k:['hello','hi','hey','who are you'],r:"Hey! 👋 I'm Tejeshree's digital twin! I know everything about her work at AWS, her AI projects, her skills, and her background. What would you like to know?"},
+  {k:['who is tejeshree','about you','tell me about yourself'],r:"Tejeshree is a Software Development Engineer at Amazon Web Services, working on CloudWatch Application Signals — building developer tools and AI-powered observability features used by customers globally. She's passionate about AI, building agents, RAG systems, and exploring GenAI on the side. She holds an MS in CS from CSUEB (GPA: 4.0)."},
 ];
-
 function getBotResponse(q) {
   const lower = q.toLowerCase();
   for (const item of KB) {
@@ -461,7 +423,6 @@ function getBotResponse(q) {
   }
   return "That's a great question! I'm best at answering about Tejeshree's experience at AWS, her AI projects, skills, or background. Try asking: *What do you do at AWS?*, *Tell me about your AI projects*, or *What's your tech stack?*";
 }
-
 function formatMsg(text) {
   return text
     .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
@@ -469,7 +430,6 @@ function formatMsg(text) {
     .replace(/•/g,'<span style="color:var(--indigo)">•</span>')
     .replace(/\n/g,'<br>');
 }
-
 function addMsg(text, isUser) {
   const msgs = document.getElementById('chat-messages');
   const div = document.createElement('div');
@@ -479,7 +439,6 @@ function addMsg(text, isUser) {
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
 }
-
 function showTyping() {
   const msgs = document.getElementById('chat-messages');
   const div = document.createElement('div');
@@ -488,12 +447,10 @@ function showTyping() {
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
 }
-
 function hideTyping() {
   const t = document.getElementById('typing-indicator');
   if (t) t.remove();
 }
-
 function sendMessage() {
   const input = document.getElementById('chat-input');
   const q = input.value.trim();
@@ -507,13 +464,10 @@ function sendMessage() {
     addMsg(getBotResponse(q), false);
   }, 700 + Math.random() * 500);
 }
-
 function sendSuggestion(btn) {
   document.getElementById('chat-input').value = btn.textContent;
   sendMessage();
 }
-
-// Welcome message
 setTimeout(() => {
   addMsg("Hey! 👋 I'm Tejeshree's digital twin! Ask me anything — her AWS work, AI projects, skills, or background.", false);
 }, 500);
